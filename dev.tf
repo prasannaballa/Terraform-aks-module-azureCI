@@ -7,8 +7,10 @@ terraform {
   }
 }
 
-module "module_dev" {
-  source = "./modules"
+module "dev" {
+  source      = "./modules/dev"
+  ...
+}
   prefix = "dev"
   resource_group_name = "aks_tf_rg"
   location            = "CentralUS"
