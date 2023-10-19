@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-module "dev" {
+module "module_dev" {
   source               = "./.module"
   prefix = "dev"
   resource_group_name = "aks_tf_rg"
