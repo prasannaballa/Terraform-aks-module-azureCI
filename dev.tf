@@ -1,5 +1,5 @@
 module "dev" {
-  source      = "./modules"
+  source      = "./aksmodule/modules"
   resource_group_name = "aks_tf_rg"
   location            = "CentralUS"
   cluster_name        = "devakspras1769"
