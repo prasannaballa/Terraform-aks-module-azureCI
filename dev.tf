@@ -8,7 +8,7 @@ terraform {
 }
 
 module "dev" {
-  source      = "./modules/dev"
+  source      = "./modules"
   ...
 }
   prefix = "dev"
