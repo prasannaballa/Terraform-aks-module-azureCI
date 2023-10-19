@@ -22,3 +22,7 @@ variable "acr_name" {
   type        = string
   description = "ACR name"
 }
+variable "prefix" {
+  type = string
+  description = "The prefix used for all resources in this example"
+}
