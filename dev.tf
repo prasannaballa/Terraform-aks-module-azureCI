@@ -1,6 +1,5 @@
 module "dev" {
   source      = "./modules"
-  ...
 }
   resource_group_name = "aks_tf_rg"
   location            = "CentralUS"
