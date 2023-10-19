@@ -26,7 +26,7 @@ provider "azurerm" {
     client_secret = "_uA8Q~iwIbPpY560hDwbwuhWpg4MQHjHaHZ44bBr"  
 }
 resource "azurerm_resource_group" "aks-rg" {
-  name     = var.resource_group_name
+  name     = ${var.prefix}-aks-rg
   location = var.location
 }
 
@@ -38,7 +38,7 @@ resource "azurerm_role_assignment" "role_acrpull" {
 }
 
 resource "azurerm_container_registry" "acr" {
-  name                = var.acr_name
+  name                = ${var.prefix}-acr
   resource_group_name = azurerm_resource_group.aks-rg.name
   location            = var.location
   sku                 = "Standard"
@@ -46,7 +46,7 @@ resource "azurerm_container_registry" "acr" {
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = var.cluster_name
+  name                = ${var.prefix}-aks
   kubernetes_version  = var.kubernetes_version
   location            = var.location
   resource_group_name = azurerm_resource_group.aks-rg.name
