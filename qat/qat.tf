@@ -1,19 +1,19 @@
 terraform {
   backend "azurerm" {
-    resource_group_name = "Terraform"
-    storage_account_name = "mytfstorage12345"
-    container_name = "aksmodule"
+    resource_group_name = "aks"
+    storage_account_name = "qatmoduleci"
+    container_name = "qatmoduletest"
     key = "terraform.storage"
-    access_key = "k+m0krF3hiuX9TSshFHlrttm/2r9Ne58J8U6aPNHVlaAEp/48YuYGvhI19Y2ixdU0/AYZsYhih70+AStinPztQ=="
+    access_key = "f1ToTn9/do5vjriQGQZwhSFn+vTXuIwK/+m2ZTPd7aVCOdr9fmTuPH5WiB0hE5emurpM1vwEsY2O+AStXOPVcQ=="
   }
 }
 module "qat" {
-  source      = "./module"
+  source      = "../module"
   prefix = "qat"
-  resource_group_name = "aksqat"
+  resource_group_name = "aksqattest"
   location            = "CentralUS"
-  cluster_name        = "qatakspras0769"
+  cluster_name        = "qataksprastest0769"
   kubernetes_version  = "1.26.3"
   system_node_count   = 2
-  acr_name            = "myacrqat1234"            
+  acr_name            = "myacrqattest1234"            
 }
