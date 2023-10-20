@@ -8,7 +8,7 @@ terraform {
   }
 }
 module "dev" {
-  source      = "./modules"
+  source      = "./module"
   resource_group_name = "aksdev"
   location            = "CentralUS"
   cluster_name        = "devakspras0769"
